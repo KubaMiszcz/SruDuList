@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INote, Note } from '../models/note';
+import { ITask, Note } from '../models/task';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  Notes: INote[] = [];
+  Notes: ITask[] = [];
 
   constructor(private notesService: NotesService) { }
 

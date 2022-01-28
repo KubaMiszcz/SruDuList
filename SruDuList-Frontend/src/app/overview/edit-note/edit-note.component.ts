@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INote, Note } from 'src/app/models/note';
+import { ITask, Note } from 'src/app/models/task';
 import { ITag } from 'src/app/models/tag';
 import { TagsService } from 'src/app/services/tags.service';
 import { NotesService } from 'src/app/services/notes.service';
@@ -10,7 +10,7 @@ import { NotesService } from 'src/app/services/notes.service';
   styleUrls: ['./edit-note.component.scss']
 })
 export class EditNoteComponent implements OnInit {
-  note: INote = new Note();
+  note: ITask = new Note();
   content: string;
   details: string;
   tags: ITag[] = [];

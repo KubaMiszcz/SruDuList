@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { INote } from '../models/note';
+import { ITask } from '../models/task';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
-  Notes: INote[] = [];
-  NotesBS = new BehaviorSubject<INote[]>([]);
+  Notes: ITask[] = [];
+  NotesBS = new BehaviorSubject<ITask[]>([]);
 
   constructor() { }
 

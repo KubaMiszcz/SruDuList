@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { INote } from 'src/app/models/note';
+import { ITask } from 'src/app/models/task';
 
 @Component({
   selector: 'app-note-tile',
@@ -7,7 +7,7 @@ import { INote } from 'src/app/models/note';
   styleUrls: ['./note-tile.component.scss']
 })
 export class NoteTileComponent implements OnInit {
-  @Input() Note: INote;
+  @Input() Note: ITask;
 
   constructor() { }
 

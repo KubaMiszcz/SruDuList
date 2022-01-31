@@ -1,0 +1,5 @@
+<h1>overview works!</h1>
+<app-edit-note></app-edit-note>
+<div *ngFor="let item of Notes">
+  <app-note-tile [Note]="item"></app-note-tile>
+</div>

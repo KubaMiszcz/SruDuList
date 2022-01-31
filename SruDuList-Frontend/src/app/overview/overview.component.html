@@ -1,5 +1,27 @@
-<h1>overview works!</h1>
-<app-edit-note></app-edit-note>
-<div *ngFor="let item of Notes">
-  <app-note-tile [Note]="item"></app-note-tile>
+<div class="row ">
+  <div class="col-lg-2">
+    <app-tag-list></app-tag-list>
+  </div>
+  <div class="col-lg-6">
+    <p>sortbyname</p>
+    <form >
+      <div class="form-group d-inline-flex">
+        <input type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="Add new note">
+        <button type="submit"
+          class="btn btn-primary mb-2 col-4"
+          (click)="addNewNote()">Add</button>
+      </div>
+    </form>
+
+    <div *ngFor="let item of Notes">
+      <app-note-tile [Note]="item"></app-note-tile>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    details
+  </div>
 </div>

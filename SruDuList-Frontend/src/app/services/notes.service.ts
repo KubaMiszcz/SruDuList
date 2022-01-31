@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ITask } from '../models/task';
+import { INote, DEFAULTNOTES } from '../models/note';
 import { BehaviorSubject } from 'rxjs';
+import { ITag } from '../models/tag';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
-  Notes: ITask[] = [];
-  NotesBS = new BehaviorSubject<ITask[]>([]);
+  AllNotes: INote[] = [];
+  NotesBS = new BehaviorSubject<INote[]>([]);
+  currentNote: INote;
 
-  constructor() { }
+  constructor() {
+    this.AllNotes = DEFAULTNOTES;
+    this.NotesBS.next(this.AllNotes);
+  }
 
   AddNote(note: any) {
-    this.Notes.push(note);
-    this.NotesBS.next(this.Notes);
+    this.AllNotes.push(note);
+    this.NotesBS.next(this.AllNotes);
+  }
+
+  filterNotesByTag(tag: ITag) {
+    console.log('filter by ', tag.Name);
+
+    // this.NotesBS.next(this.AllNotes.filter(n => n.Tags.includes(tag)));
   }
 }

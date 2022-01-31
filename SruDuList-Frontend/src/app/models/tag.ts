@@ -1,42 +1,39 @@
-import { INITIAL_USER, IUser } from './user';
-
-export interface ITag {
-  name: string;
-  author: IUser;
-  icon?:string;
-  isFavourite?: boolean;
-  isPinned?:number;
-  orderNumber?:number;
+export class ITag {
+  Name: string;
+  IsFavourite: boolean;
+  OrderNo: number;
 }
 
 export class Tag implements ITag {
-  name: string;
-  author: IUser;
-  icon?: string;
-  isFavourite?: boolean;
-  isPinned?: number;
-  orderNumber?: number;
+  Name: string;
+  IsFavourite: boolean;
+  OrderNo: number;
 }
 
-export const DEFAULT_TAGS: ITag[] = [
+export const DefaultTags: ITag[] = [
   {
-    name: 'miasto',
-    author: INITIAL_USER,
+    Name: 'miasto',
+    IsFavourite: true,
+    OrderNo: 0
   },
   {
-    name: 'unimet',
-    author: INITIAL_USER,
+    Name: 'unimet',
+    IsFavourite: true,
+    OrderNo: 1
   },
   {
-    name: 'allegro',
-    author: INITIAL_USER,
+    Name: 'leroy',
+    IsFavourite: false,
+    OrderNo: 2
   },
   {
-    name: 'druk3d',
-    author: INITIAL_USER,
+    Name: 'druk3d',
+    IsFavourite: false,
+    OrderNo: 3
   },
   {
-    name: 'elektro',
-    author: INITIAL_USER,
+    Name: 'elektro',
+    IsFavourite: false,
+    OrderNo: 4
   }
 ];

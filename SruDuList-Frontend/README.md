@@ -1,4 +1,36 @@
 # SruDuListFrontend
+yet another todo list
+
+
+date deleted
+isdeleted albo lista deleted
+istoday albo lista today
+
+
+ikonki obok 
+    movetoday
+    deleted
+    tagi
+    prioryty?
+    
+list - sublista -sublista....
+
+sections?
+
+drag&drop
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 

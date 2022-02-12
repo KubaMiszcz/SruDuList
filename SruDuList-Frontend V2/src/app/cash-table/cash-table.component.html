@@ -1,0 +1,48 @@
+<div class="card col p-0">
+  <h5 class="card-header p-2">
+    <span class="text-align-left"> {{title}}: </span>
+    <span class="text-align-right"> {{totalAmount | plnPipe}} </span>
+  </h5>
+
+  <div class="card-body p-0 m-0 incomes-table">
+
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr class="py-0">
+          <th scope="col" class="py-0 text-align-left">Nazwa</th>
+          <th scope="col" class="py-0 text-align-right">Wartosc</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list" (click)="onRowClick(item)">
+          <td class="col-8 py-0 px-1">
+            <div class="income-row  rodw dd-flex jdustify-content-between">
+              <span class="cdol">{{item.name}}</span>
+              <span class="codl-auto mdr-auto"></span>
+
+
+
+              <div class="d-fdlex income-icons-panel">
+                <div class="d-fdlex income-icons">
+                  <div *ngIf="item.isNew" class="cosl-2 badge rounded-pill bg-primary m-asuto mt-1">Nowe</div>
+                </div>
+
+                <div class="d-fdlex income-icons">
+                  <div class="cosl-1 msr-2 sp-0">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                  </div>
+                  <div *ngIf="item.type === icomeTypes.Loan" class="cdol-1 dml-1 dmr-0 dp-0">
+                    <i class="fas fa-donate "></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </td>
+          <td class="col-4 py-0 text-align-right">{{item.value  | plnPipe}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

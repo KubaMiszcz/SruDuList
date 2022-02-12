@@ -1,0 +1,47 @@
+.card {
+  min-height: 20em;
+  max-height: 35em;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .incomes-table {
+    overflow: auto;
+    border-radius: 0 0 8px 8px;
+
+    .income-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+
+      .income-icons-panel {
+        display: flex;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+        .income-icons {
+          display: flex;
+          flex-direction: row;
+          align-content: flex-end;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          width: min-content;
+        }
+      }
+    }
+
+  }
+
+  th,
+  td {
+    border: 1px solid lightgray;
+  }
+}

@@ -1,0 +1,46 @@
+<div *ngIf="event?.name" class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">{{event.type}}</h5>
+      <button type="button" class="btn-close" 
+      aria-label="Close">
+      <!-- data-bs-dismiss="modal"  -->
+    </button>
+    </div>
+    <div class="modal-body">
+
+      <div class="row m-0">
+        <div class="col-3 m-0 p-0 pt-2">
+          <img src="http://placekitten.com/200/300" class="card-img-top" style="height: 9em;" alt="http://placekitten.com/200/300">
+        </div>
+
+        <div class="col m-0 p-0">
+          <div class="col">
+            <div class="event-value">{{event.name}}</div>
+          </div>
+          <div class="col event-description my-2" >
+            <p class="mx-4">{{event.description}}</p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <p class="event-value">{{event.value | plnPipe}}</p>
+          </div>
+        </div>
+        </div>
+
+    </div>
+
+
+    <div class="modal-footer p-2">
+      <button *ngIf="event.isRejectable" type="button" name="" id=""
+              class="col-4 btn btn-outline-danger btn-md btn-bloxck mr-1"
+              (click)="rejectEvent()">
+        Odrzuc</button>
+      <button type="button" name="" id="" 
+      class="col-4 btn btn-outline-success btn-md btn-blxock"
+      (click)="acceptEvent()">
+      <!-- data-bs-dismiss="modal" -->
+        OK
+      </button>
+    </div>
+  </div>
+</div>

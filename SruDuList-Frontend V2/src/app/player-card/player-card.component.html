@@ -1,0 +1,120 @@
+<div class="card container p-0">
+  <h5 class="card-header text-bold player-header">
+    <span>Gracz: {{player.name}}</span>
+    <span> {{player.age.year}} lat, {{player.job.name}}</span>
+  </h5>
+
+  <div class="card-body p-3 mx-0">
+    <div class="row m-0 p-0">
+
+      <div class="col m-0 p-0">
+
+        <div class="row m-0 p-0">
+
+          <div class="col-5 m-0 p-0 mr-3">
+            <div class="card">
+              <img src="http://placekitten.com/200/300" class="card-img-top" style="height: 9em;" alt="http://placekitten.com/200/300">
+            </div>
+          </div>
+
+          <div class="col m-0 p-0">
+
+            <div class="col m-0 p-0">
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text col-5 text-bold justify-content-start" id="basic-addon3">Zawód:</span>
+                <span class="input-group-text col text-bold justify-content-end px-1" id="basic-addon3">{{player.job.name}}</span>
+              </div>
+            </div>
+
+            <div class="col m-0 p-0">
+              <div class="input-group input-group-sm mb-2">
+                <span class="input-group-text col-5 text-bold justify-content-start" id="basic-addon3">Zarobki:</span>
+                <span class="input-group-text col text-bold justify-content-end px-1" id="basic-addon3">{{player.job.salary | plnPipe}}</span>
+              </div>
+            </div>
+
+            <div class="col m-0 p-0">
+              <div class="input-group input-group-sm mb-2 d-flexs csol">
+                <span class="input-group-text col text-bold justify-content-start"
+                      [ngClass]="{
+                  'indicator-danger' : player.totalCash < 0,
+                  'text-green' : player.totalCash > 0
+              }"
+                      id="basic-addon3">Konto:</span>
+                <div
+                     class="input-group-text col-7 text-bold justify-content-between px-1" id="basic-addon3"
+                     [ngClass]="{
+                    'indicator-danger' : player.totalCash < 0,
+                    'text-green' : player.totalCash > 0
+                }">
+                  <span *ngIf="isBalanceNegative">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                  </span>
+                  <span *ngIf="!isBalanceNegative">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                  <span class="mx-0 px-0">{{player.totalCash | plnPipe}}</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col m-0 p-0">
+              <div class="progress" style="height: 2.4em;">
+                <div class="label">{{salaryMessage}}</div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                     role="progressbar" aria-valuenow="player.age.day" aria-valuemin="0" aria-valuemax="28"
+                     style="width: {{(player.age.day/28)*100}}%">
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col m-0 p-0 mt-4">
+      <div class="text-bold input-group input-group-md mb-1 d-flex">
+        <div class="text-bold input-group-text text-align-left px-1"
+             [ngClass]="{'text-red': (totalIncomes - totalExpenses) < 0}"
+             id="basic-addon3">Bilans:
+        </div>
+        <div type="text" class=" text-bold form-control px-1"
+             [ngClass]="{
+            'background-red' : isBalanceNegative,
+            'background-green' : !isBalanceNegative,
+            'text-red' : isBalanceNegative,
+            'text-green' : !isBalanceNegative
+        }"
+             id="basic-url" aria-describedby="basic-addon3"
+             disabled>
+
+          <div class="d-flex justify-content-between">
+            <span *ngIf="isBalanceNegative">
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            </span>
+            <span *ngIf="!isBalanceNegative">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </span>
+
+            <span class="paax-1">
+              <span class="text-green">{{totalIncomes}}</span>
+              <span class="text-red">{{' - ' + totalExpenses}} </span>
+              <span> = </span>
+              <span> {{(totalIncomes - totalExpenses) | plnPipe}}</span>
+            </span>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

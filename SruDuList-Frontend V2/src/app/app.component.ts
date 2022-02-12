@@ -1,4 +1,3 @@
-import { GameService } from './services/game.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'JakZyc';
+  title = 'SruDuList';
 
   constructor(
     private router: Router,
   ) {
-    this.router.navigate(['/player-info']);
+    // this.router.navigate(['/player-info']);
   }
 }
